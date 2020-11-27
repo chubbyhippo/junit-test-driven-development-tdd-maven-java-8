@@ -1,13 +1,13 @@
 package tdd;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Flight {
 
 	private String id;
-	List<Passenger> passengers = new ArrayList<>();
+	Set<Passenger> passengers = new HashSet<>();
 
 	public Flight(String id) {
 		this.id = id;
@@ -17,8 +17,8 @@ public abstract class Flight {
 		return id;
 	}
 
-	public List<Passenger> getPassengersList() {
-		return Collections.unmodifiableList(passengers);
+	public Set<Passenger> getPassengersSet() {
+		return Collections.unmodifiableSet(passengers);
 	}
 
 	public abstract boolean addPassenger(Passenger passenger);
